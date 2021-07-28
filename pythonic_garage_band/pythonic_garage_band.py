@@ -14,6 +14,9 @@ class Musician(ABC):
         pass
     def play_solo(self):
         pass
+    def get_instrument(self):
+        pass
+
     
 class Guitarist(Musician):
 
@@ -37,13 +40,9 @@ class Drummer(Musician):
     def get_instrument(self):
         return "drums"
     def play_solo(self):
-       return "bom bom buh bom"
+       return "rattle boom crash"
 
         
-        
-
-    def play_solo(self):
-        pass
 
 class Bassist(Musician):
     def __str__(self):
@@ -53,22 +52,39 @@ class Bassist(Musician):
     def get_instrument(self):
         return "bass"
     def play_solo(self):
-        return "rattle boom crash"
+        return "bom bom buh bom"
 
 class Band():
+    instances=[]
     def __init__(self,name,members):
         self.name=name
         self.members=members
-
-   
+        self.instances.append(self)
 
     def __str__(self):
         pass
     def __repr__ (self):
             pass
+    def play_solos(self):
+        all_band_paly_solos=[]
+        for i in self.members:
+              all_band_paly_solos.append(i.play_solo())
+        return  all_band_paly_solos
+    @classmethod
+    def to_list(cls):
+        #  cls.instances=[]
+         return cls.instances
 
+# members = [
+#         Guitarist("Kurt Cobain"),
+#         Bassist("Krist Novoselic"),
+#         Drummer("Dave Grohl"),
+#     ]
 
+# some_band = Band("Nirvana", members)
 
+print(some_band.to_list())
+#  isinstance(one_band.members[0], Musician)
 
 
 
