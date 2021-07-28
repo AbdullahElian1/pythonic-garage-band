@@ -1,10 +1,8 @@
 from abc import ABC, abstractmethod
 
 class Musician(ABC):
-    # member=[]
     def __init__(self,name):
         self.name=name
-        # Musician.member.append[self.name]
 
     @abstractmethod
     def __str__ (self):
