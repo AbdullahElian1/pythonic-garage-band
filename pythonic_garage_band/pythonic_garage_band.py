@@ -60,9 +60,9 @@ class Band():
         self.instances.append(self)
 
     def __str__(self):
-        pass
+        return "Band Class"
     def __repr__ (self):
-            pass
+            "Band Class"
     def play_solos(self):
         all_band_paly_solos=[]
         for i in self.members:
@@ -81,7 +81,7 @@ class Band():
 
 # some_band = Band("Nirvana", members)
 
-print(some_band.to_list())
+# print(some_band.to_list())
 #  isinstance(one_band.members[0], Musician)
 
 
